@@ -7,8 +7,13 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
+<<<<<<< HEAD
 <project name="Registra-TEK_v1" default="default" basedir=".">
     <description>Builds, tests, and runs the project Registra-TEK_v1.</description>
+=======
+<project name="RegistraTek_dao_dto-6" default="default" basedir=".">
+    <description>Builds, tests, and runs the project RegistraTek_dao_dto-6.</description>
+>>>>>>> d17a81959bd6ad7e4f8405cbcd11612d4a991530
     <import file="nbproject/build-impl.xml"/>
     <!--
 
@@ -58,7 +63,11 @@
 
     An example of overriding the target for project execution could look like this:
 
+<<<<<<< HEAD
         <target name="run" depends="Registra-TEK_v1-impl.jar">
+=======
+        <target name="run" depends="RegistraTek_dao_dto-6-impl.jar">
+>>>>>>> d17a81959bd6ad7e4f8405cbcd11612d4a991530
             <exec dir="bin" executable="launcher.exe">
                 <arg file="${dist.jar}"/>
             </exec>
