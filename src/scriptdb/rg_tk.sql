@@ -23,3 +23,23 @@ CREATE TABLE IF NOT EXISTS rg_tk.sede (
   direccion VARCHAR(45) NOT NULL,
   PRIMARY KEY (codigo))
 ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table rg_tk.curso
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS rg_tk.curso ;
+
+CREATE TABLE IF NOT EXISTS rg_tk.curso (
+  codigo INT NOT NULL,
+  nombre VARCHAR(45) NOT NULL,
+  jornada VARCHAR(45) NOT NULL,
+  sede_codigo INT NOT NULL,
+  PRIMARY KEY (codigo),
+  INDEX fk_curso_sede_idx (sede_codigo ASC),
+  CONSTRAINT fk_curso_sede
+    FOREIGN KEY (sede_codigo)
+    REFERENCES rg_tk.sede (codigo)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
