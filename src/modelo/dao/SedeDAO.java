@@ -94,7 +94,26 @@ public class SedeDAO implements Obligacion<SedeDTO>{
 
     @Override
     public SedeDTO read(Object key) {
+        PreparedStatement ps;
+        ResultSet res;
+        SedeDTO s = null;
         
+        try {
+            ps = con.getCnn().prepareStatement(SQL_READ);
+            ps.setString(1, key.toString());
+            
+            res = ps.executeQuery();
+                    
+            while(res.next()){
+                s = new SedeDTO(res.getString(1), res.getString(2), res.getString(3));
+            }
+            return s;
+        } catch (SQLException ex) {
+            Logger.getLogger(SedeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.cerrarConexion(); 
+        }
+        return s;
     }
 
     @Override
