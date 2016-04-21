@@ -43,3 +43,24 @@ CREATE TABLE IF NOT EXISTS rg_tk.curso (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table rg_tk.estudiante
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS rg_tk.estudiante ;
+
+CREATE TABLE IF NOT EXISTS rg_tk.estudiante (
+  codigo INT NOT NULL,
+  nombre VARCHAR(45) NOT NULL,
+  apellidos VARCHAR(45) NOT NULL,
+  fechaNacimiento DATE NOT NULL,
+  curso_codigo INT NOT NULL,
+  PRIMARY KEY (codigo),
+  INDEX fk_estudiante_curso1_idx (curso_codigo ASC),
+  CONSTRAINT fk_estudiante_curso1
+    FOREIGN KEY (curso_codigo)
+    REFERENCES rg_tk.curso (codigo)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
