@@ -70,7 +70,26 @@ public class SedeDAO implements Obligacion<SedeDTO>{
 
     @Override
     public boolean update(SedeDTO c) {
+        PreparedStatement ps; 
         
+        try {
+            
+            ps = con.getCnn().prepareStatement(SQL_UPDATE);
+            ps.setString(1, c.getNombre());
+            ps.setString(2, c.getDireccion());
+            ps.setInt(3, metodos_IO.leerIntSinMensaje(c.getCodigo()));
+            
+            if (ps.executeUpdate() > 0) {
+                //con.cerrarConexion();
+                return true;
+            }
+                    
+        } catch (SQLException ex) {
+            Logger.getLogger(SedeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.cerrarConexion(); 
+        }
+        return false;
     }
 
     @Override
