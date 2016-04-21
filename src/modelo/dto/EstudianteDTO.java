@@ -16,7 +16,13 @@ public class EstudianteDTO {
     //sobrecarga de constructores...
     public EstudianteDTO() {}
     public EstudianteDTO(String codigo) {this.codigo = codigo;}
-
+    public EstudianteDTO(String codigo, String nombre, String apellidos, Date fechaNacimiento, int codigo_curso) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.fechaNacimiento = fechaNacimiento;
+        this.codigo_curso = codigo_curso;
+    }
     
     //metodos de acesso SET...
     public void setCodigo(String codigo) {this.codigo = codigo;}
@@ -32,6 +38,11 @@ public class EstudianteDTO {
     public Date getFechaNacimiento() {return fechaNacimiento;}
     public int getCodigo_curso() {return codigo_curso;}
     
-  
+    //Metodos Operacionales...
+    
+    /* No implemente mostrarDatos() con toString() con override por que cada  
+     * que lo hacia no me mostraba los datos del objeto si no que antes me
+     * mostraba era el tipo de dato mas la posicion en memoria. 
+     */
     
 }
