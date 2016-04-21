@@ -36,8 +36,8 @@ public class ProcedureDAO {
             
             res = ps.executeQuery(); //ejecúto el statement y eso me devuelve un 0 o un 1, true o false numerico.
             
-            if (res.next() && (res.getInt(1) == 1)) { // "res.next()" si existe un resultado y && obteniendo el entero 
-                con.cerrarConexion(); //cierre la conexion
+            if (res.next() && (res.getInt(1) == 1)) { // "res.next()" si existe un resultado y && obteniendo el entero de ese resultado es igual a un 1 osea un true, entonces ingreselo al sistema si no digale que no devuelva nada
+                con.cerrarConexion(); //cierre la conexion de la base de datos
                 return true;
             } 
                     
