@@ -23,6 +23,11 @@ public class Controlador_Curso {
         c.update(new CursoDTO(cdg, nmb, drc, codigoCursoConvertido));
     } //los resultados se ven en la BD
     
+    public void EliminarCurso(String cdg){
+        CursoDAO c = new CursoDAO();
+        c.delete(cdg);
+    } //los resultados se ven en la BD
+    
     public String[] ListarCursoConCodigo(String cdg){
         
         CursoDTO cd; //Luego utilizare este objeto de tabla para realizar un vector
