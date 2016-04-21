@@ -44,5 +44,12 @@ public class EstudianteDTO {
      * que lo hacia no me mostraba los datos del objeto si no que antes me
      * mostraba era el tipo de dato mas la posicion en memoria. 
      */
-    
+    public void mostrarDatos() { //metodo para mostrar los datos de este objeto
+        System.out.println (" Salon: \n------------------- " + 
+             "\n  codigo   = \t" + codigo + 
+             "\n  nombre   = \t" + nombre + 
+             "\n apellidos = \t" + apellidos + 
+             "\n fechaNaci = \t" + fechaNacimiento + 
+             "\n-------------------"); 
+    }
 }
