@@ -51,7 +51,21 @@ public class SedeDAO implements Obligacion<SedeDTO>{
 
     @Override
     public boolean delete(Object key) {
-        
+        PreparedStatement ps;
+        try {
+            ps = con.getCnn().prepareStatement(SQL_DELETE);
+            ps.setString(1, key.toString());
+            
+            if (ps.executeUpdate() > 0){
+                // con.cerrarConexion(); no estaba, pero me aseguro por si las...
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SedeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.cerrarConexion(); 
+        }
+        return false;
     }
 
     @Override
