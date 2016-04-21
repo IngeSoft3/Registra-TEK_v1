@@ -19,4 +19,20 @@ public class SedeDTO {
         this.direccion = direccion;
     }
     
+    //metodos de acesso SET...
+    public void setCodigo(String codigo) {this.codigo = codigo;}
+    public void setNombre(String nombre) {this.nombre = nombre;}
+    public void setDireccion(String direccion) {this.direccion = direccion;}
+
+    
+    //metodos de acesso GET...
+    public String getCodigo() {return codigo;}
+    public String getNombre() {return nombre;}
+    public String getDireccion() {return direccion;}
+    
+    //Toca mostrar los mensaje directamente como strings mejor
+    //terminar de refinar codigo 
+    
+    //organizar los metodos mejor...
+    
 }
