@@ -30,9 +30,19 @@ public class SedeDTO {
     public String getNombre() {return nombre;}
     public String getDireccion() {return direccion;}
     
-    //Toca mostrar los mensaje directamente como strings mejor
-    //terminar de refinar codigo 
+    //Metodos Operacionales...
+    /* No implemente mostrarDatos() con toString() con override por que cada
+     * que lo hacia no me mostraba los datos del objeto si no que antes me
+     * mostraba era el tipo de dato mas la posicion en memoria. 
+     */
+    public void mostrarDatos() {
+        //metodo para mostrar los datos de este objeto
+        System.out.println (" Sede: \n------------------- " +
+                "\n  codigo   = \t" + codigo +
+                "\n  nombre   = \t" + nombre +
+                "\n direccion = \t" + direccion + 
+                "\n-------------------");
     
-    //organizar los metodos mejor...
+    }
     
 }
