@@ -118,7 +118,25 @@ public class SedeDAO implements Obligacion<SedeDTO>{
 
     @Override
     public List<SedeDTO> readAll() {
+        PreparedStatement ps;
+        ResultSet res;
+        ArrayList<SedeDTO> sedes = new ArrayList();
         
+        try {
+            
+            ps = con.getCnn().prepareStatement(SQL_READALL);
+            res = ps.executeQuery();
+            
+            while(res.next()){
+                sedes.add(new SedeDTO(res.getString(1), res.getString(2), res.getString(3)));
+            } 
+            
+        }catch (SQLException ex) {
+                Logger.getLogger(SedeDAO.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                con.cerrarConexion(); 
+            }
+            return sedes;
     }
     
 }
