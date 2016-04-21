@@ -30,6 +30,22 @@ public class Controlador_Sede {
         s.delete(cdg);
     } //los resultados se ven en la BD
     
+    public String[] ListarSedeConCodigo(String cdg){
+        
+        SedeDTO sd; //Luego utilizare este objeto de tabla para realizar un vector
+        SedeDAO s = new SedeDAO(); //creo una DAO para que genere movimientos desde la base de datos.
+        String[] FilaSede = {"","",""}; //creo un vector que es el que voy a agregar al la tabla de consultas
+        
+        //aqui lo utilizo para almacenar el objeto que me retorna...
+        sd = s.read(cdg); //obtengo el objeto desde la base de datos...
+        
+        FilaSede[0] =  sd.getCodigo();
+        FilaSede[1] =  sd.getNombre();
+        FilaSede[2] =  sd.getDireccion();
+        
+        return FilaSede;
+    } //los resultados se ven en la Aplicacion
+    
     public String[][] ListarTodasLasSedes(){
         
         List<SedeDTO> lstSd; //necesitare la lista de Sedes...
