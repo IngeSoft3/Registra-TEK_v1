@@ -15,11 +15,11 @@ import java.sql.PreparedStatement;
 public class SedeDAO implements Obligacion<SedeDTO>{
     
     //constantes que me permitiran manejar las sentencias SQL de la base de datos
-    private static final String  SQL_INSERT = "";
-    private static final String  SQL_DELETE = "";
-    private static final String  SQL_UPDATE = "";
-    private static final String    SQL_READ = "";
-    private static final String SQL_READALL = "";
+    private static final String  SQL_INSERT = "INSERT INTO sede (codigo, nombre, direccion) VALUES (?, ?, ?)";
+    private static final String  SQL_DELETE = "DELETE FROM sede WHERE codigo = ?";
+    private static final String  SQL_UPDATE = "UPDATE sede SET nombre=?, direccion=? WHERE codigo = ?";
+    private static final String    SQL_READ = "SELECT * FROM sede WHERE codigo = ?";
+    private static final String SQL_READALL = "SELECT * FROM sede";
     
     //constante que me permitira saber si estoy conectado...
     private static final Conexion con = Conexion.saberEstado();
