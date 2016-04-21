@@ -25,6 +25,11 @@ public class Controlador_Sede {
         s.update(new SedeDTO(cdg, nmb, drc));
     } //los resultados se ven en la BD
     
+    public void EliminarSede(String cdg){
+        SedeDAO s = new SedeDAO();
+        s.delete(cdg);
+    } //los resultados se ven en la BD
+    
     public String[][] ListarTodasLasSedes(){
         
         List<SedeDTO> lstSd; //necesitare la lista de Sedes...
