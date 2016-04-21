@@ -23,6 +23,23 @@ public class Controlador_Curso {
         c.update(new CursoDTO(cdg, nmb, drc, codigoCursoConvertido));
     } //los resultados se ven en la BD
     
+    public String[] ListarCursoConCodigo(String cdg){
+        
+        CursoDTO cd; //Luego utilizare este objeto de tabla para realizar un vector
+        CursoDAO c = new CursoDAO(); //creo una DAO para que genere movimientos desde la base de datos.
+        String[] FilaCurso = {"","","",""}; //creo un vector que es el que voy a agregar al la tabla de consultas
+        
+        //aqui lo utilizo para almacenar el objeto que me retorna...
+        cd = c.read(cdg); //obtengo el objeto desde la base de datos...
+        
+        FilaCurso[0] =  cd.getCodigo();
+        FilaCurso[1] =  cd.getNombre();
+        FilaCurso[2] =  cd.getJornada();
+        FilaCurso[3] =  cd.getSede_codigo()+"";
+        
+        return FilaCurso;
+    } //los resultados se ven en la Aplicacion
+    
     public String[][] ListarTodosLosCursos(){
         
         List<CursoDTO> lstCrs; //necesitare la lista de Cursos...
