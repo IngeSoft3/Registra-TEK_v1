@@ -61,9 +61,6 @@ public class ProcedureDAO {
             ps.setInt(1, code); //convierto el String en Entero.
             
             res = ps.executeQuery(); //ejecúto el statement y eso me devuelve un 0 o un 1, true o false numerico.
-                metodos_IO.JOPSMD(res.findColumn("age") + ""); // --- eliminar esto ----
-                metodos_IO.JOPSMD(res.next() + ""); // --- eliminar esto ----
-            
             if (res.findColumn("age") > 0) { // "res.findColumn(1)" si existe un resultado numerico en una columna llamada "age" que sea mayor a cero, entonces guardelo en "anios" y luego muestrelo...
                 anios = res.getInt(1);
                 con.cerrarConexion(); //cierre la conexion
