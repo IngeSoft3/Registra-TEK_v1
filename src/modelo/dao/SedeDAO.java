@@ -27,7 +27,26 @@ public class SedeDAO implements Obligacion<SedeDTO>{
     //metodos para realizar el CRUD...
     @Override
     public boolean create(SedeDTO c) {
+        PreparedStatement ps; 
         
+        try {
+            
+            ps = con.getCnn().prepareStatement(SQL_INSERT);
+            ps.setString(1, c.getCodigo());
+            ps.setString(2, c.getNombre());
+            ps.setString(3, c.getDireccion());
+            
+            if (ps.executeUpdate() > 0) {
+                con.cerrarConexion();
+                return true;
+            }
+                    
+        } catch (SQLException ex) {
+            Logger.getLogger(SedeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.cerrarConexion(); 
+        }
+        return false;
     }
 
     @Override
