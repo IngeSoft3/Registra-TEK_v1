@@ -4,6 +4,14 @@ package dao;
 import conexion.Conexion;
 import dto.CursoDTO;
 import interfaces.Obligacion;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -25,6 +33,26 @@ public class CursoDAO implements Obligacion<CursoDTO>{
     @Override
     public boolean create(CursoDTO c) {
         
+        PreparedStatement ps; 
+        
+        try {
+            
+            ps = con.getCnn().prepareStatement(SQL_INSERT);
+            ps.setString(1, c.getCodigo());
+            ps.setString(2, c.getNombre());
+            ps.setString(3, c.getJornada());
+            
+            if (ps.executeUpdate() > 0) {
+                con.cerrarConexion();
+                return true;
+            }
+                    
+        } catch (SQLException ex) {
+            Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.cerrarConexion(); 
+        }
+        return false;
     }
 
     @Override
