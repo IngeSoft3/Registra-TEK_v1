@@ -12,6 +12,15 @@ INSERT INTO sede (codigo, nombre, direccion) VALUES (4400, "4to-level", "oriente
 INSERT INTO sede (codigo, nombre, direccion) VALUES (5500, "5to-level", "Occidente");
 
 -- -----------------------------------------------------
+-- Table rg_tk.estudiante
+-- -----------------------------------------------------
+INSERT INTO estudiante (codigo, nombre, apellidos, fechaNacimiento, curso_codigo) VALUES ( 1234, "Elber", "Gomez Torba",  "2010-03-11",  1212);
+INSERT INTO estudiante (codigo, nombre, apellidos, fechaNacimiento, curso_codigo) VALUES ( 1034, "Alma", "Tadero Perez",  "2011-04-12",  1313);
+INSERT INTO estudiante (codigo, nombre, apellidos, fechaNacimiento, curso_codigo) VALUES ( 1204, "Alejo", "damas treso",  "2012-05-13",  1414);
+INSERT INTO estudiante (codigo, nombre, apellidos, fechaNacimiento, curso_codigo) VALUES ( 1230, "Camilo",  "Del Basto",  "2013-06-14",  1515);
+INSERT INTO estudiante (codigo, nombre, apellidos, fechaNacimiento, curso_codigo) VALUES ( 1134, "Juanita", "sinu noyo",  "2014-07-15",  1616);
+
+-- -----------------------------------------------------
 -- Table rg_tk.materia
 -- -----------------------------------------------------
 INSERT INTO materia (codigo, nombre, parcial1, parcial2, parcial3, talleres, adicionales, proyecto, estudiante_Codigo, docente_codigo, salon_codigo) VALUES (1000, "Calculo I",   2.3, 4.3, 5, 4.6, 3.1, 5, 1134, 3121, 1005);
