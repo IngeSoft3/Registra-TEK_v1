@@ -101,7 +101,26 @@ public class CursoDAO implements Obligacion<CursoDTO>{
 
     @Override
     public CursoDTO read(Object key) {
+        PreparedStatement ps;
+        ResultSet res;
+        CursoDTO c = null;
         
+        try {
+            ps = (PreparedStatement) con.getCnn().prepareStatement(SQL_READ);
+            ps.setString(1, key.toString());
+            
+            res = ps.executeQuery();
+                    
+            while(res.next()){
+                c = new CursoDTO(res.getString(1), res.getString(2), res.getString(3), res.getInt(4));
+            }
+            return c;
+        } catch (SQLException ex) {
+            Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.cerrarConexion(); 
+        }
+        return c;
     }
 
     @Override
