@@ -87,4 +87,26 @@ public class metodos_IO {
         return n;
     }
     
+    /**
+     * método para leer un dato string.
+     * @param mensaje
+     * @return 
+     */
+    public static String JOPSID(String mensaje) { //método para leer un dato string 
+        String N = JOptionPane.showInputDialog(mensaje);
+        return N;
+    }
+    
+    
+    /**
+     * método para leer un dato string y convertirlo a char.
+     * @param mensaje
+     * @return 
+     */
+    public static char leerChar(String mensaje) {
+        String N = JOptionPane.showInputDialog(mensaje);
+        char n = N.charAt(0);
+        return n;
+    }
+    
 }
