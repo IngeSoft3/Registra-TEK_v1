@@ -64,5 +64,27 @@ public class metodos_IO {
         return n;
     }
     
+    /**
+     * método para leer un dato string y convertirlo a Float
+     * @param mensaje
+     * @return 
+     */
+    public static float leerFloat(String mensaje) { 
+        //método para leer un dato string y convertirlo a float
+        String N = JOptionPane.showInputDialog(mensaje);
+        float n = Float.parseFloat(N);
+        return n;
+    }
+    
+    
+    /**
+     * método para leer un dato string y convertirlo a Float.
+     * @param mensaje
+     * @return 
+     */
+    public static float leerFloatSinMensaje(String mensaje) { //
+        float n = Float.parseFloat(mensaje);
+        return n;
+    }
     
 }
