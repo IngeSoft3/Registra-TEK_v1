@@ -12,6 +12,16 @@ INSERT INTO sede (codigo, nombre, direccion) VALUES (4400, "4to-level", "oriente
 INSERT INTO sede (codigo, nombre, direccion) VALUES (5500, "5to-level", "Occidente");
 
 -- -----------------------------------------------------
+-- Table rg_tk.docente
+-- -----------------------------------------------------
+INSERT INTO docente (codigo, nombre, apellidos, fechaNacimiento) VALUES (3211, "Tony", "Melendez cruz", "2015-03-17");
+INSERT INTO docente (codigo, nombre, apellidos, fechaNacimiento) VALUES (3112, "Ana", "Tulipanes rojos", "2014-07-10");
+INSERT INTO docente (codigo, nombre, apellidos, fechaNacimiento) VALUES (3121, "Mary", "Caneco Pina", "2013-02-02");
+INSERT INTO docente (codigo, nombre, apellidos, fechaNacimiento) VALUES (3221, "Cony", "Toma Pote", "2012-01-13");
+INSERT INTO docente (codigo, nombre, apellidos, fechaNacimiento) VALUES (3222, "Karla", "Tulia Lopez", "2011-09-05");
+
+
+-- -----------------------------------------------------
 -- Table rg_tk.estudiante
 -- -----------------------------------------------------
 INSERT INTO estudiante (codigo, nombre, apellidos, fechaNacimiento, curso_codigo) VALUES ( 1234, "Elber", "Gomez Torba",  "2010-03-11",  1212);
