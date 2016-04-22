@@ -12,6 +12,15 @@ INSERT INTO sede (codigo, nombre, direccion) VALUES (4400, "4to-level", "oriente
 INSERT INTO sede (codigo, nombre, direccion) VALUES (5500, "5to-level", "Occidente");
 
 -- -----------------------------------------------------
+-- Table rg_tk.salon
+-- -----------------------------------------------------
+INSERT INTO salon (codigo, nombre, ubicacion) VALUES (1001, "AL-201", "Agora");
+INSERT INTO salon (codigo, nombre, ubicacion) VALUES (1002, "PS-103", "Parquesoft");
+INSERT INTO salon (codigo, nombre, ubicacion) VALUES (1003, "AL-200", "Agora");
+INSERT INTO salon (codigo, nombre, ubicacion) VALUES (1004, "PS-101", "Parquesoft");
+INSERT INTO salon (codigo, nombre, ubicacion) VALUES (1005, "AL-201", "Agora");
+
+-- -----------------------------------------------------
 -- Table rg_tk.docente
 -- -----------------------------------------------------
 INSERT INTO docente (codigo, nombre, apellidos, fechaNacimiento) VALUES (3211, "Tony", "Melendez cruz", "2015-03-17");
