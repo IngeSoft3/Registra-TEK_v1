@@ -76,7 +76,27 @@ public class CursoDAO implements Obligacion<CursoDTO>{
 
     @Override
     public boolean update(CursoDTO c) {
+        PreparedStatement ps; 
         
+        try {
+            
+            ps = con.getCnn().prepareStatement(SQL_UPDATE);
+            ps.setString(1, c.getNombre());
+            ps.setString(2, c.getJornada());
+              ps.setInt (3, c.getSede_codigo());
+              ps.setInt (4, metodos_IO.leerIntSinMensaje(c.getCodigo()));
+            
+            if (ps.executeUpdate() > 0) {
+                //con.cerrarConexion();
+                return true;
+            }
+                    
+        } catch (SQLException ex) {
+            Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.cerrarConexion(); 
+        }
+        return false;
     }
 
     @Override
