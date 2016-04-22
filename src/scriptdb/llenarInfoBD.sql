@@ -29,6 +29,14 @@ INSERT INTO docente (codigo, nombre, apellidos, fechaNacimiento) VALUES (3121, "
 INSERT INTO docente (codigo, nombre, apellidos, fechaNacimiento) VALUES (3221, "Cony", "Toma Pote", "2012-01-13");
 INSERT INTO docente (codigo, nombre, apellidos, fechaNacimiento) VALUES (3222, "Karla", "Tulia Lopez", "2011-09-05");
 
+-- -----------------------------------------------------
+-- Table rg_tk.curso
+-- -----------------------------------------------------
+INSERT INTO curso (codigo, nombre, jornada, sede_codigo) VALUES (1212, "SB-141", "tarde", 1100);
+INSERT INTO curso (codigo, nombre, jornada, sede_codigo) VALUES (1313, "SB-142", "maniana", 2200);
+INSERT INTO curso (codigo, nombre, jornada, sede_codigo) VALUES (1414, "SB-143", "tarde", 3300);
+INSERT INTO curso (codigo, nombre, jornada, sede_codigo) VALUES (1515, "SB-144", "maniana", 4400);
+INSERT INTO curso (codigo, nombre, jornada, sede_codigo) VALUES (1616, "SB-145", "tarde", 5500);
 
 -- -----------------------------------------------------
 -- Table rg_tk.estudiante
@@ -50,3 +58,4 @@ INSERT INTO materia (codigo, nombre, parcial1, parcial2, parcial3, talleres, adi
 
 
 -- -----------------------------------------------------
+-- Finalizacion del script que llena la base de datos de informacion...
