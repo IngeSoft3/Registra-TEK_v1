@@ -25,4 +25,11 @@ public class Prueba_con_Procedures {
           metodos_IO.JOPSMD("Ingreso Fallido");
       }
     }
-  }
+    
+    //Probando el calculo de la Edad...
+    int code = metodos_IO.leerIntSinMensaje(metodos_IO.JOPSID("Digite codigo"));
+    p = new ProcedureDAO();
+    int edad = p.getEdadDocente(code);
+    metodos_IO.JOPSMD("La edad del docente con codigo " + code + " es:" + edad);
+    
+}
