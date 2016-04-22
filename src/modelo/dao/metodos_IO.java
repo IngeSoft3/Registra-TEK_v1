@@ -41,5 +41,28 @@ public class metodos_IO {
         return n;
     }
     
+    /**
+     * método para leer un dato string y convertirlo a double.
+     * @param mensaje
+     * @return 
+     */
+    public static double leerDouble(String mensaje) {
+        String N = JOptionPane.showInputDialog(mensaje);
+        double n = Double.parseDouble(N);
+        return n;
+    }
+    
+    
+    /**
+     * método para leer un dato string y convertirlo a long.
+     * @param mensaje
+     * @return 
+     */
+    public static long leerLong(String mensaje) {
+        String N = JOptionPane.showInputDialog(mensaje);
+        long n = Long.parseLong(N);
+        return n;
+    }
+    
     
 }
