@@ -17,6 +17,14 @@ public class Prueba_con_Sede {
         System.out.println(salonABuscar.toString());
         s.update(new SedeDTO("222", "salon1", "unknown"));
         salonABuscar.mostrarDatos();
-        
-        }
+    }
+    
+    public static void prueba_ListarSedeConCodigo() {
+        //Prueba del metodo ListarSedeConCodigo del controlador que me retorna un vector de Strings...
+        Controlador_Sede cs = new Controlador_Sede();
+        final int NUM_COLUMNAS = 3; //son tres: codigo, nombre, apellidos;
+        for (int i = 0; i < NUM_COLUMNAS; i++) {
+            System.out.println(cs.ListarSedeConCodigo("1100")[i]);
+    }
+    
 }
