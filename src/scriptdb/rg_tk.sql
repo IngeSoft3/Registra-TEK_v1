@@ -78,6 +78,18 @@ CREATE TABLE IF NOT EXISTS rg_tk.docente (
   PRIMARY KEY (codigo))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table rg_tk.salon
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS rg_tk.salon ;
+
+CREATE TABLE IF NOT EXISTS rg_tk.salon (
+  codigo INT NOT NULL,
+  nombre VARCHAR(45) NOT NULL,
+  ubicacion VARCHAR(45) NOT NULL,
+  PRIMARY KEY (codigo))
+ENGINE = InnoDB;
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
