@@ -124,10 +124,10 @@ public class CursoDAO implements Obligacion<CursoDTO>{
     }
 
     @Override
-    public List<CursoDTO> readAll() {
+    public ArrayList<CursoDTO> readAll() {
         PreparedStatement ps;
         ResultSet res;
-        List<CursoDTO> salones = new List();
+        ArrayList<CursoDTO> salones = new ArrayList();
         
         try {
             
@@ -141,7 +141,7 @@ public class CursoDAO implements Obligacion<CursoDTO>{
         }catch (SQLException ex) {
                 Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
             } finally {
-                //con.cerrarConexion(); 
+                con.cerrarConexion(); //termina la conexion definitivamente
             }
         return salones;
     }
