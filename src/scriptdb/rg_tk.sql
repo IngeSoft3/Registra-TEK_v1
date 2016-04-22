@@ -90,6 +90,44 @@ CREATE TABLE IF NOT EXISTS rg_tk.salon (
   PRIMARY KEY (codigo))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table rg_tk.materia
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS rg_tk.materia ;
+
+CREATE TABLE IF NOT EXISTS rg_tk.materia (
+  codigo INT NOT NULL,
+  nombre VARCHAR(45) NOT NULL,
+  parcial1 FLOAT NOT NULL,
+  parcial2 FLOAT NOT NULL,
+  parcial3 FLOAT NOT NULL,
+  talleres FLOAT NOT NULL,
+  adicionales FLOAT NOT NULL,
+  proyecto FLOAT NOT NULL,
+  estudiante_codigo INT NOT NULL,
+  docente_codigo INT NOT NULL,
+  salon_codigo INT NOT NULL,
+  PRIMARY KEY (codigo),
+  INDEX fk_materia_estudiante1_idx (estudiante_codigo ASC),
+  INDEX fk_materia_docente1_idx (docente_codigo ASC),
+  INDEX fk_materia_salon1_idx (salon_codigo ASC),
+  CONSTRAINT fk_materia_estudiante1
+    FOREIGN KEY (estudiante_codigo)
+    REFERENCES rg_tk.estudiante (codigo)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT fk_materia_docente1
+    FOREIGN KEY (docente_codigo)
+    REFERENCES rg_tk.docente (codigo)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT fk_materia_salon1
+    FOREIGN KEY (salon_codigo)
+    REFERENCES rg_tk.salon (codigo)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
