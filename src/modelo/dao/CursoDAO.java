@@ -12,11 +12,11 @@ import interfaces.Obligacion;
 public class CursoDAO implements Obligacion<CursoDTO>{
     
     //constantes que me permitiran manejar las sentencias SQL de la base de datos
-    private static final String  SQL_INSERT = "";
-    private static final String  SQL_DELETE = "";
-    private static final String  SQL_UPDATE = "";
-    private static final String    SQL_READ = "";
-    private static final String SQL_READALL = "";
+    private static final String  SQL_INSERT = "INSERT INTO curso (codigo, nombre, jornada, sede_codigo) VALUES (?, ?, ?, ?)"";
+    private static final String  SQL_DELETE = "DELETE FROM curso WHERE codigo = ?";
+    private static final String  SQL_UPDATE = "UPDATE salon SET nombre=?, jornada=?, sede_codigo=? WHERE codigo = ?";
+    private static final String    SQL_READ = "SELECT * FROM curso WHERE codigo = ?";
+    private static final String SQL_READALL = "SELECT * FROM curso";
     
     //constante que me permitira saber si estoy conectado...
     private static final Conexion con = Conexion.saberEstado();
