@@ -65,6 +65,18 @@ CREATE TABLE IF NOT EXISTS rg_tk.estudiante (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table rg_tk.docente
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS rg_tk.docente ;
+
+CREATE TABLE IF NOT EXISTS rg_tk.docente (
+  codigo INT NOT NULL,
+  nombre VARCHAR(45) NULL,
+  apellidos VARCHAR(45) NULL,
+  fechaNacimiento DATE NULL,
+  PRIMARY KEY (codigo))
+ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
